@@ -7,7 +7,12 @@ import PageFour from "./components/PageFour";
 
 function App() {
   const [page, setPage] = useState('1');
-  const [plan, setPlan] = useState(false);
+  const [terms, setTerms] = useState({
+    duration: 'monthly',
+    onlineService: false,
+    largerStorage: false,
+    customProfile: false
+  });
   return (
     <>
     <div className="navigation">
@@ -32,9 +37,9 @@ function App() {
         </div>
       </div>
       {page === '1' && <PageOne setPage={setPage}/>}
-      {page === '2' && <PageTwo setPage={setPage} plan={plan} setPlan={setPlan}/>}
-      {page === '3' && <PageThree setPage={setPage} plan={plan}/>}
-      {page === '4' && <PageFour />}
+      {page === '2' && <PageTwo setPage={setPage} setTerms={setTerms} terms={terms}/>}
+      {page === '3' && <PageThree setPage={setPage} setTerms={setTerms} terms={terms}/>}
+      {page === '4' && <PageFour setPage={setPage} terms={terms}/>}
     </>
   )
 }

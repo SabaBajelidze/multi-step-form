@@ -140,6 +140,10 @@ body {
   color: var(--marine-blue);
 }
 
+#confirm-button {
+  background-color: var(--purplish-blue);
+}
+
 /* radio input styles */
 
 .radio-label input {
@@ -298,6 +302,29 @@ input:checked + .slider:before {
 .checkbox-price {
   font-size: 0.7em;
   color: var(--purplish-blue);
+}
+
+/* fourth page styles */
+#plan-type p {
+  margin: 0;
+}
+
+#info-first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#info-first button {
+  background: transparent;
+  border: none;
+  color: var(--cool-gray);
+  text-decoration: underline;
+}
+
+#info-first p {
+  color: var(--marine-blue);
+  font-weight: 500;
 }
 
 /* Bottom Navigation styles */
