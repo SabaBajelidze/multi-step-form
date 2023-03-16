@@ -12,26 +12,52 @@ export default function PageFour({ setPage, terms }) {
   if (terms.duration === 'monthly') {
     switch (terms.type) {
       case 'arcade':
-        fee = '$9/mo';
+        fee = 9;
         break;
       case 'advanced':
-        fee = '$12/mo';
+        fee = 12;
         break;
       case 'pro':
-        fee = '$15/mo';
+        fee = 15;
+        break;
+      default:
         break;
     }
   } else if (terms.duration === 'yearly') {
     switch (terms.type) {
       case 'arcade':
-        fee = '$90/yr';
+        fee = 90;
         break;
       case 'advanced':
-        fee = '$120/yr';
+        fee = 120;
         break;
       case 'pro':
-        fee = '$150/yr';
+        fee = 150;
         break;
+      default:
+        break;
+    }
+  }
+  let totalFee = fee;
+  if(terms.duration === 'monthly') {
+    if(terms.largerStorage === true) {
+      totalFee += 2;
+    }
+    if(terms.onlineService === true) {
+      totalFee += 1;
+    }
+    if(terms.customProfile === true) {
+      totalFee += 2;
+    }
+  } else if(terms.duration === 'yearly') {
+    if(terms.largerStorage === true) {
+      totalFee += 20;
+    }
+    if(terms.onlineService === true) {
+      totalFee += 10;
+    }
+    if(terms.customProfile === true) {
+      totalFee += 20;
     }
   }
   return (
@@ -48,8 +74,21 @@ export default function PageFour({ setPage, terms }) {
                 </p>
                 <button>Change</button>
               </div>
-              <p>{fee}</p>
+              <p>{terms.duration === 'monthly' ? '$'+fee+'/mo' : '$'+fee+'/yr'}</p>
             </div>
+            <hr className='line'/>
+            <div>
+              {terms.duration === 'yearly' && terms.onlineService && <div className='pricing'><p>Online Service</p> <p>+10$/yr</p></div>}
+              {terms.duration === 'monthly' && terms.onlineService && <div className='pricing'><p>Online Service</p> <p>+1$/mo</p></div>}
+              {terms.duration === 'yearly' && terms.largerStorage && <div className='pricing'><p>Larger Storage</p> <p>+20$/yr</p></div>}
+              {terms.duration === 'monthly' && terms.largerStorage && <div className='pricing'><p>Larger Storage</p> <p>+2$/mo</p></div>}
+              {terms.duration === 'yearly' && terms.customProfile && <div className='pricing'><p>Custom Profile</p> <p>+20$/yr</p></div>}
+              {terms.duration === 'monthly' && terms.customProfile && <div className='pricing'><p>Custom Profile</p> <p>+2$/mo</p></div>}
+            </div>
+          </div>
+          <div id='total-price'>
+            {terms.duration === 'monthly' ? <p>Total (per month)</p> : <p>Total (per year)</p>}
+            <p>{terms.duration === 'monthly' ? '$'+totalFee+'/mo' : '$'+totalFee+'/yr'}</p>
           </div>
         </form>
       </div>
@@ -66,7 +105,7 @@ export default function PageFour({ setPage, terms }) {
           className="button"
           id="confirm-button"
           onClick={() => {
-            setPage('4');
+            setPage('5');
           }}
         >
           Confirm

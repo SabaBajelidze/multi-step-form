@@ -53,6 +53,7 @@ body {
   border-radius: 50%;
   font-size: 0.7em;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .active-page-number {
@@ -305,6 +306,10 @@ input:checked + .slider:before {
 }
 
 /* fourth page styles */
+#plan-type {
+  background-color: var(--alabaster);
+}
+
 #plan-type p {
   margin: 0;
 }
@@ -313,7 +318,7 @@ input:checked + .slider:before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} 
 
 #info-first button {
   background: transparent;
@@ -322,9 +327,62 @@ input:checked + .slider:before {
   text-decoration: underline;
 }
 
+.line {
+  width: 95%;
+  margin: 0 auto;
+  border: none;
+  height: 0.5px;
+  background-color: var(--light-gray);
+  margin-top: 10px;
+}
+
+.pricing {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
+.pricing p:last-of-type {
+  color: var(--marine-blue);
+  font-weight: 4  00;
+}
+
 #info-first p {
   color: var(--marine-blue);
   font-weight: 500;
+}
+
+#total-price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#total-price p:last-of-type {
+  color: var(--purplish-blue);
+  font-weight: 500;
+} 
+
+/* page 5 styles */
+
+#page5-formwrapper {
+  height: 100vh;
+}
+
+#page5-form {
+  text-align: center;
+}
+
+#page5-form img {
+  width: 50px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+#page5-form p {
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
 /* Bottom Navigation styles */
