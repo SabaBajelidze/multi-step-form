@@ -12,7 +12,8 @@ function App() {
     duration: 'monthly',
     onlineService: false,
     largerStorage: false,
-    customProfile: false
+    customProfile: false,
+    type: undefined
   });
 
   function handlePageChanging(n) {

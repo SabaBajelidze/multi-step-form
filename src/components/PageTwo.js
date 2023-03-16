@@ -30,7 +30,7 @@ export default function PageTwo({ setPage, setTerms, terms }) {
             <br /> yearly billing
           </p>
           <label className="radio-label">
-            <input type="radio" name="type" onChange={e => {
+            <input type="radio" name="type" checked={terms.type === 'arcade'} onChange={e => {
               if(e.target.checked) setTerms({...terms, type: 'arcade'})
             }} />
             <div className="type-div">
@@ -42,7 +42,7 @@ export default function PageTwo({ setPage, setTerms, terms }) {
             </div>
           </label>
           <label className="radio-label">
-            <input type="radio" name="type" onChange={e => {
+            <input type="radio" name="type" checked={terms.type === 'advanced'} onChange={e => {
               if(e.target.checked) setTerms({...terms, type: 'advanced'})
             }}/>
             <div className="type-div">
@@ -54,7 +54,7 @@ export default function PageTwo({ setPage, setTerms, terms }) {
             </div>
           </label>
           <label className="radio-label">
-            <input type="radio" name="type" onChange={e => {
+            <input type="radio" name="type" checked={terms.type === 'pro'} onChange={e => {
               if(e.target.checked) setTerms({...terms, type: 'pro'})
             }}/>
             <div className="type-div">
@@ -80,7 +80,9 @@ export default function PageTwo({ setPage, setTerms, terms }) {
           setPage('1');
         }}>Go Back</button>
         <button className='button' onClick={() => {
-          setPage('3');
+          if(terms.type !== undefined) {
+            setPage('3');
+          }
         }}>Next Step</button>
       </div>
     </>

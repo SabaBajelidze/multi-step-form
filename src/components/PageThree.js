@@ -27,7 +27,7 @@ export default function PageThree({ setPage, setTerms, terms }) {
         setTerms({...terms, largerStorage: true})
       } else {
         parentDiv.style.border = '1px solid var(--light-gray)';
-        setTerms({...terms, onlineService: false})
+        setTerms({...terms, largerStorage: false})
       }
     } else if (e.target.name === 'custom-profile') {
       const parentDiv = document.getElementById('custom-profile');

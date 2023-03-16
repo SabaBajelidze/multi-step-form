@@ -393,3 +393,19 @@ input:checked + .slider:before {
   justify-content: space-between;
 }
 
+
+/* style for errors */
+
+.label-div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.label-div p {
+  margin-bottom: 0;
+  color: var(--strawberry-red);
+  font-size: 0.7em;
+  font-weight: 700;
+}
