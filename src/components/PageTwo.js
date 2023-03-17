@@ -12,14 +12,6 @@ export default function PageTwo({ setPage, setTerms, terms }) {
     const pageNumber3 = document.getElementById('page-number-three');
     pageNumber3.classList.remove('active-page-number');
   });
-
-  function handlePlanChange(e) {
-    if (!e.target.checked) {
-      setTerms({ ...terms, duration: 'monthly' });
-    } else {
-      setTerms({ ...terms, duration: 'yearly' });
-    }
-  }
   return (
     <div className="page-container">
       <div className="container">
@@ -83,8 +75,17 @@ export default function PageTwo({ setPage, setTerms, terms }) {
               </div>
             </label>
           </div>
-          <div id="select-plan">
-            {!terms.duration === 'yearly' ? (
+          <div id="select-plan" onClick={() => {
+            const checked = document.getElementById('plan-checkbox-page2').checked
+            document.getElementById('plan-checkbox-page2').checked = !checked;
+            if (checked) {
+              setTerms({ ...terms, duration: 'monthly' });
+            } else {
+              setTerms({ ...terms, duration: 'yearly' });
+            }
+
+          }}>
+            {terms.duration === 'monthly' ? (
               <p>Monthly</p>
             ) : (
               <p style={{ color: 'var(--cool-gray)' }}>Monthly</p>
@@ -92,8 +93,8 @@ export default function PageTwo({ setPage, setTerms, terms }) {
             <div className="switch">
               <input
                 type="checkbox"
+                id='plan-checkbox-page2'
                 checked={terms.duration === 'yearly'}
-                onChange={(e) => handlePlanChange(e)}
               />
               <span className="slider round"></span>
             </div>
