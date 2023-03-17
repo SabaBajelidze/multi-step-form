@@ -42,7 +42,7 @@ export default function PageThree({ setPage, setTerms, terms }) {
   }
 
   return (
-    <>
+    <div className='page-container'>
       <div className="container">
         <form className="form">
           <h1>Pick add-ons</h1>
@@ -130,6 +130,6 @@ export default function PageThree({ setPage, setTerms, terms }) {
           Go Back
         </button>
       </div>
-    </>
+    </div>
   );
 }

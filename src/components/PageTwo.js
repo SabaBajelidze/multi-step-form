@@ -21,79 +21,82 @@ export default function PageTwo({ setPage, setTerms, terms }) {
     }
   }
   return (
-    <>
+    <div className="page-container">
       <div className="container">
         <form className="form">
           <h1>Select your plan</h1>
-          <p>
+          <p id='page2-p'>
             You have the option of monthly or
             <br /> yearly billing
           </p>
-          <label className="radio-label">
-            <input
-              type="radio"
-              name="type"
-              checked={terms.type === 'arcade'}
-              onChange={(e) => {
-                if (e.target.checked) setTerms({ ...terms, type: 'arcade' });
-              }}
-            />
-            <div className="type-div">
-              <img src={arcade} alt="arcade" />
-              <div>
-                <h2>Arcade</h2>
-                {terms.duration === 'yearly' ? <p>$90/yr</p> : <p>$9/mo</p>}
+          <div className="type-div-flex">
+            <label className="radio-label">
+              <input
+                type="radio"
+                name="type"
+                checked={terms.type === 'arcade'}
+                onChange={(e) => {
+                  if (e.target.checked) setTerms({ ...terms, type: 'arcade' });
+                }}
+              />
+              <div className="type-div">
+                <img src={arcade} alt="arcade" />
+                <div>
+                  <h2>Arcade</h2>
+                  {terms.duration === 'yearly' ? <p>$90/yr</p> : <p>$9/mo</p>}
+                </div>
               </div>
-            </div>
-          </label>
-          <label className="radio-label">
-            <input
-              type="radio"
-              name="type"
-              checked={terms.type === 'advanced'}
-              onChange={(e) => {
-                if (e.target.checked) setTerms({ ...terms, type: 'advanced' });
-              }}
-            />
-            <div className="type-div">
-              <img src={advanced} alt="advanced" />
-              <div>
-                <h2>Advanced</h2>
-                {terms.duration === 'yearly' ? <p>$120/yr</p> : <p>$12/mo</p>}
+            </label>
+            <label className="radio-label">
+              <input
+                type="radio"
+                name="type"
+                checked={terms.type === 'advanced'}
+                onChange={(e) => {
+                  if (e.target.checked)
+                    setTerms({ ...terms, type: 'advanced' });
+                }}
+              />
+              <div className="type-div">
+                <img src={advanced} alt="advanced" />
+                <div>
+                  <h2>Advanced</h2>
+                  {terms.duration === 'yearly' ? <p>$120/yr</p> : <p>$12/mo</p>}
+                </div>
               </div>
-            </div>
-          </label>
-          <label className="radio-label">
-            <input
-              type="radio"
-              name="type"
-              checked={terms.type === 'pro'}
-              onChange={(e) => {
-                if (e.target.checked) setTerms({ ...terms, type: 'pro' });
-              }}
-            />
-            <div className="type-div">
-              <img src={pro} alt="pro" />
-              <div>
-                <h2>Pro</h2>
-                {terms.duration === 'yearly' ? <p>$150/yr</p> : <p>$15/mo</p>}
+            </label>
+            <label className="radio-label">
+              <input
+                type="radio"
+                name="type"
+                checked={terms.type === 'pro'}
+                onChange={(e) => {
+                  if (e.target.checked) setTerms({ ...terms, type: 'pro' });
+                }}
+              />
+              <div className="type-div">
+                <img src={pro} alt="pro" />
+                <div>
+                  <h2>Pro</h2>
+                  {terms.duration === 'yearly' ? <p>$150/yr</p> : <p>$15/mo</p>}
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
           <div id="select-plan">
             {!terms.duration === 'yearly' ? (
               <p>Monthly</p>
             ) : (
               <p style={{ color: 'var(--cool-gray)' }}>Monthly</p>
             )}
-            <label className="switch">
+            <div className="switch">
               <input
                 type="checkbox"
                 checked={terms.duration === 'yearly'}
                 onChange={(e) => handlePlanChange(e)}
               />
               <span className="slider round"></span>
-            </label>
+            </div>
             {terms.duration === 'yearly' ? (
               <p>Yearly</p>
             ) : (
@@ -122,6 +125,6 @@ export default function PageTwo({ setPage, setTerms, terms }) {
           Go Back
         </button>
       </div>
-    </>
+    </div>
   );
 }

@@ -2,6 +2,7 @@ import completedImg from '../images/icon-thank-you.svg';
 
 export default function PageFive() {
   return (
+    <div className='page-container'>
     <div className="container" id='page5-formwrapper'>
       <form className="form" id="page5-form">
         <img src={completedImg} alt="completed icon" />
@@ -11,6 +12,7 @@ export default function PageFive() {
           please feel free to email us at support@loremgaming.com
         </p>
       </form>
+    </div>
     </div>
   );
 }

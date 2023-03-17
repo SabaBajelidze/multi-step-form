@@ -62,6 +62,28 @@ body {
   color: var(--marine-blue)
 }
 
+.item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.item-info {
+  display: none;
+}
+
+.item-info p:last-of-type {
+  color: var(--white);
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.item-info p:first-of-type {
+  color: var(--cool-gray);
+  font-size: 0.9em;
+} 
+
 /* Form Styles */
 
 .container {
@@ -154,7 +176,7 @@ body {
   visibility: hidden;
 }
 
-.radio-label .type-div {
+.type-div {
   display: flex;
   width: 100%;
   border: 1px solid var(--light-gray);
@@ -419,7 +441,136 @@ input:checked + .slider:before {
 
 /* media queries */
 
-@media (min-width: 1000px) {
-  
+@media (min-width: 1400px) {
+  .navigation {
+    background-image: url('./images/bg-sidebar-desktop.svg');
+  }
+  body {
+    background-color: var(--light-blue);
+  }
+  #root {
+    width: 1000px;
+    margin: 100px auto 0 auto;
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 15px;
+    display: flex;
+    column-gap: 120px;
+    height: 500px;
+  }
+
+  .navigation {
+    height: 100%;
+    width: 230px;
+    background-size: 100% 100%;
+  }
+
+  .page-list {
+   flex-direction: column;
+   row-gap: 30px;
+   margin-top: 30px;
+   margin-left: 30px;
+  }
+
+  .item-info {
+    display: block;
+  }
+
+  .page-container {
+    width: 550px;
+  }
+
+  .container {
+    max-width: 100%;
+    background-color: var(--white);
+    position: static;
+    height: 400px;
+  }
+
+  .form {
+    font-size: 1.4em;
+  }
+
+  .form p {
+    font-size: 0.7em;
+    margin-bottom: 30px;
+  }
+
+  .form p br {
+    display: none;
+  }
+
+  .form input {
+    margin-bottom: 25px;
+  }
+
+  .navigation-bottom {
+    position: static;
+    width: 480px;
+  }
+
+  .form {
+    margin: 0;
+  }
+
+  #page2-p {
+    margin-bottom: 0;
+  }
+
+  .type-div-flex {
+    display: flex;
+    column-gap: 10px;
+    height: 140px;
+    justify-content: space-between;
+  }
+
+  .radio-label {
+    width: 120px;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .radio-label h2 {
+    font-size: 1em;
+  }
+
+  .type-div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .type-div div p {
+    margin-bottom: 0;
+  }
+
+  .type-div img {
+    margin: 0;
+  }
+
+  #select-plan {
+    margin-top: 30px;
+  }
+
+  #page4-container {
+    width: 530px;
+  }
+
+  #page5-formwrapper {
+    max-height: 100%;
+  }
+
+  #page5-form img {
+    width: 100px;
+  }
+
+  #page5-form p {
+    font-size: 0.7em;
+  }
 
 }

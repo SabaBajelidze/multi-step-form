@@ -59,33 +59,57 @@ function App() {
     <>
       <div className="navigation">
         <div className="page-list">
-          <div
-            className="page-number"
-            id="page-number-one"
-            onClick={() => handlePageChanging(1)}
-          >
-            1
+          <div className="item">
+            <div
+              className="page-number"
+              id="page-number-one"
+              onClick={() => handlePageChanging(1)}
+            >
+              1
+            </div>
+            <div className="item-info">
+              <p>Step 1</p>
+              <p>YOUR INFO</p>
+            </div>
           </div>
-          <div
-            className="page-number"
-            id="page-number-two"
-            onClick={() => handlePageChanging(2)}
-          >
-            2
+          <div className="item">
+            <div
+              className="page-number"
+              id="page-number-two"
+              onClick={() => handlePageChanging(2)}
+            >
+              2
+            </div>
+            <div className="item-info">
+              <p>Step 2</p>
+              <p>SELECT PLAN</p>
+            </div>
           </div>
-          <div
-            className="page-number"
-            id="page-number-three"
-            onClick={() => handlePageChanging(3)}
-          >
-            3
+          <div className="item">
+            <div
+              className="page-number"
+              id="page-number-three"
+              onClick={() => handlePageChanging(3)}
+            >
+              3
+            </div>
+            <div className="item-info">
+              <p>Step 3</p>
+              <p>ADD-ONS</p>
+            </div>
           </div>
-          <div
-            className="page-number"
-            id="page-number-four"
-            onClick={() => handlePageChanging(4)}
-          >
-            4
+          <div className="item">
+            <div
+              className="page-number"
+              id="page-number-four"
+              onClick={() => handlePageChanging(4)}
+            >
+              4
+            </div>
+            <div className="item-info">
+              <p>Step 4</p>
+              <p>SUMMARY</p>
+            </div>
           </div>
         </div>
       </div>

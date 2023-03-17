@@ -60,7 +60,7 @@ export default function PageFour({ setPage, terms }) {
     }
   }
   return (
-    <>
+    <div className='page-container' id='page4-container'>
       <div className="container">
         <form className="form">
           <h1>Finishing Up</h1>
@@ -110,6 +110,6 @@ export default function PageFour({ setPage, terms }) {
           Go Back
         </button>
       </div>
-    </>
+    </div>
   );
 }

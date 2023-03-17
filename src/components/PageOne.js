@@ -8,7 +8,7 @@ export default function PageOne({ setPage }) {
     pageNumber.classList.add('active-page-number');
   });
   return (
-    <>
+    <div className='page-container'>
       <div className="container">
         <form className="form">
           <h1>Personal Info</h1>
@@ -81,6 +81,6 @@ export default function PageOne({ setPage }) {
           Next Step
         </button>
       </div>
-    </>
+    </div>
   );
 }
