@@ -7,7 +7,6 @@ export default function PageFour({ setPage, terms }) {
     const pageNumber4 = document.getElementById('page-number-four');
     pageNumber4.classList.add('active-page-number');
   });
-  console.log(terms);
   let fee = 0;
   if (terms.duration === 'monthly') {
     switch (terms.type) {
@@ -62,7 +61,7 @@ export default function PageFour({ setPage, terms }) {
   }
   return (
     <>
-      <div className="form-wrapper">
+      <div className="container">
         <form className="form">
           <h1>Finishing Up</h1>
           <p>Double-check everything is OK before confirming.</p>
@@ -70,7 +69,7 @@ export default function PageFour({ setPage, terms }) {
             <div id="info-first">
               <div id="info-first-nested">
                 <p>
-                  {terms.type.charAt(0).toUpperCase() + terms.type.slice(1)}({terms.duration.charAt(0).toUpperCase() + terms.duration.slice(1)})
+                  {terms.type && terms.type.charAt(0).toUpperCase() + terms.type.slice(1)}({terms.duration.charAt(0).toUpperCase() + terms.duration.slice(1)})
                 </p>
                 <button>Change</button>
               </div>
@@ -85,7 +84,7 @@ export default function PageFour({ setPage, terms }) {
               {terms.duration === 'yearly' && terms.customProfile && <div className='pricing'><p>Custom Profile</p> <p>+20$/yr</p></div>}
               {terms.duration === 'monthly' && terms.customProfile && <div className='pricing'><p>Custom Profile</p> <p>+2$/mo</p></div>}
             </div>
-          </div>
+          </div>  
           <div id='total-price'>
             {terms.duration === 'monthly' ? <p>Total (per month)</p> : <p>Total (per year)</p>}
             <p>{terms.duration === 'monthly' ? '$'+totalFee+'/mo' : '$'+totalFee+'/yr'}</p>
@@ -94,14 +93,6 @@ export default function PageFour({ setPage, terms }) {
       </div>
       <div className="navigation-bottom">
         <button
-          className="button-link"
-          onClick={() => {
-            setPage('3');
-          }}
-        >
-          Go Back
-        </button>
-        <button
           className="button"
           id="confirm-button"
           onClick={() => {
@@ -109,6 +100,14 @@ export default function PageFour({ setPage, terms }) {
           }}
         >
           Confirm
+        </button>
+        <button
+          className="button-link"
+          onClick={() => {
+            setPage('3');
+          }}
+        >
+          Go Back
         </button>
       </div>
     </>

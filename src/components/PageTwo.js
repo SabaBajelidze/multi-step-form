@@ -14,15 +14,15 @@ export default function PageTwo({ setPage, setTerms, terms }) {
   });
 
   function handlePlanChange(e) {
-    if(!e.target.checked) {
-      setTerms({...terms, duration: 'monthly'});
+    if (!e.target.checked) {
+      setTerms({ ...terms, duration: 'monthly' });
     } else {
-      setTerms({...terms, duration: 'yearly'});
+      setTerms({ ...terms, duration: 'yearly' });
     }
   }
   return (
     <>
-      <div className="form-wrapper">
+      <div className="container">
         <form className="form">
           <h1>Select your plan</h1>
           <p>
@@ -30,9 +30,14 @@ export default function PageTwo({ setPage, setTerms, terms }) {
             <br /> yearly billing
           </p>
           <label className="radio-label">
-            <input type="radio" name="type" checked={terms.type === 'arcade'} onChange={e => {
-              if(e.target.checked) setTerms({...terms, type: 'arcade'})
-            }} />
+            <input
+              type="radio"
+              name="type"
+              checked={terms.type === 'arcade'}
+              onChange={(e) => {
+                if (e.target.checked) setTerms({ ...terms, type: 'arcade' });
+              }}
+            />
             <div className="type-div">
               <img src={arcade} alt="arcade" />
               <div>
@@ -42,9 +47,14 @@ export default function PageTwo({ setPage, setTerms, terms }) {
             </div>
           </label>
           <label className="radio-label">
-            <input type="radio" name="type" checked={terms.type === 'advanced'} onChange={e => {
-              if(e.target.checked) setTerms({...terms, type: 'advanced'})
-            }}/>
+            <input
+              type="radio"
+              name="type"
+              checked={terms.type === 'advanced'}
+              onChange={(e) => {
+                if (e.target.checked) setTerms({ ...terms, type: 'advanced' });
+              }}
+            />
             <div className="type-div">
               <img src={advanced} alt="advanced" />
               <div>
@@ -54,9 +64,14 @@ export default function PageTwo({ setPage, setTerms, terms }) {
             </div>
           </label>
           <label className="radio-label">
-            <input type="radio" name="type" checked={terms.type === 'pro'} onChange={e => {
-              if(e.target.checked) setTerms({...terms, type: 'pro'})
-            }}/>
+            <input
+              type="radio"
+              name="type"
+              checked={terms.type === 'pro'}
+              onChange={(e) => {
+                if (e.target.checked) setTerms({ ...terms, type: 'pro' });
+              }}
+            />
             <div className="type-div">
               <img src={pro} alt="pro" />
               <div>
@@ -66,24 +81,46 @@ export default function PageTwo({ setPage, setTerms, terms }) {
             </div>
           </label>
           <div id="select-plan">
-            {!terms.duration === 'yearly' ? <p>Monthly</p> : <p style={{color: 'var(--cool-gray)'}}>Monthly</p>}
+            {!terms.duration === 'yearly' ? (
+              <p>Monthly</p>
+            ) : (
+              <p style={{ color: 'var(--cool-gray)' }}>Monthly</p>
+            )}
             <label className="switch">
-              <input type="checkbox" checked={terms.duration === 'yearly'} onChange={e => handlePlanChange(e)} />
+              <input
+                type="checkbox"
+                checked={terms.duration === 'yearly'}
+                onChange={(e) => handlePlanChange(e)}
+              />
               <span className="slider round"></span>
             </label>
-            {terms.duration === 'yearly' ? <p>Yearly</p> : <p style={{color: 'var(--cool-gray)'}}>Yearly</p>}
+            {terms.duration === 'yearly' ? (
+              <p>Yearly</p>
+            ) : (
+              <p style={{ color: 'var(--cool-gray)' }}>Yearly</p>
+            )}
           </div>
         </form>
       </div>
-      <div className='navigation-bottom'>
-        <button className='button-link' onClick={() => {
-          setPage('1');
-        }}>Go Back</button>
-        <button className='button' onClick={() => {
-          if(terms.type !== undefined) {
-            setPage('3');
-          }
-        }}>Next Step</button>
+      <div className="navigation-bottom">
+        <button
+          className="button"
+          onClick={() => {
+            if (terms.type !== undefined) {
+              setPage('3');
+            }
+          }}
+        >
+          Next Step
+        </button>
+        <button
+          className="button-link"
+          onClick={() => {
+            setPage('1');
+          }}
+        >
+          Go Back
+        </button>
       </div>
     </>
   );

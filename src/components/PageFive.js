@@ -2,7 +2,7 @@ import completedImg from '../images/icon-thank-you.svg';
 
 export default function PageFive() {
   return (
-    <div className="form-wrapper" id='page5-formwrapper'>
+    <div className="container" id='page5-formwrapper'>
       <form className="form" id="page5-form">
         <img src={completedImg} alt="completed icon" />
         <h1>Thank you!</h1>

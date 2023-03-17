@@ -43,7 +43,7 @@ export default function PageThree({ setPage, setTerms, terms }) {
 
   return (
     <>
-      <div className="form-wrapper">
+      <div className="container">
         <form className="form">
           <h1>Pick add-ons</h1>
           <p>Add-ons help enhance your gaming experience</p>
@@ -114,20 +114,20 @@ export default function PageThree({ setPage, setTerms, terms }) {
       </div>
       <div className="navigation-bottom">
         <button
-          className="button-link"
-          onClick={() => {
-            setPage('2');
-          }}
-        >
-          Go Back
-        </button>
-        <button
           className="button"
           onClick={() => {
             setPage('4');
           }}
         >
           Next Step
+        </button>
+        <button
+          className="button-link"
+          onClick={() => {
+            setPage('2');
+          }}
+        >
+          Go Back
         </button>
       </div>
     </>
